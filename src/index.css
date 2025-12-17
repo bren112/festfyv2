@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+  /* Tipografia */
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+
+  /* Paleta de cores Festfy */
+  --ff-bg: #f8f8f5;           /* fundo principal */
+  --ff-surface: #ffffff;      /* cartões / navbar */
+  --ff-primary: #e0dd04;      /* botões principais / destaques */
+  --ff-accent: #f095ff;       /* brilhos / detalhes */
+  --ff-text-main: #111111;    /* texto principal */
+  --ff-text-muted: #4b5563;   /* texto secundário */
+  --ff-border-soft: rgba(0, 0, 0, 0.08);
+}
+
+
+body {
+  margin: 0;
+ 
+}
+
+
+
+@media (prefers-color-scheme: light) {
+
+}

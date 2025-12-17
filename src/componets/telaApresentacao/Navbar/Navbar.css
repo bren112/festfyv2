@@ -1,0 +1,121 @@
+.navbar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 18px;
+  background-color: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  width: 70%;
+  max-width: 960px;
+  height: 40px;
+  position: relative;
+  gap: 10px;
+}
+
+#logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#logo h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111111;
+  text-align: center;
+}
+
+.navbar-rolando-agora {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.navbar-rolando-agora::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background-color: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: pulse-online 1.6s infinite;
+}
+
+@keyframes pulse-online {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1.6);
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+
+
+
+.navbar-menu span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #111111;
+  border-radius: 999px;
+}
+
+.navbar-login {
+  border: none;
+  background: transparent;
+  padding: 0 4px;
+  font-size: 12px;
+  color: #111111;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* Responsivo - mobile */
+@media (max-width: 600px) {
+  .navbar-container {
+    margin-top: 8px;
+  }
+
+  #navbar {
+    width: 100%;
+    padding: 8px 12px;
+    height: 36px;
+    max-width: none;
+  }
+
+  #logo h1 {
+    font-size: 18px;
+  }
+
+  .navbar-rolando-agora {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+}
