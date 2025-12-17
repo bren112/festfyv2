@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './InfosCard.css';
+import './infosCard.css';
 
 // Componente de Contagem (Mesma lógica anterior)
 const CountUp = ({ end, duration = 2000, isCurrency = false, startAnimation }) => {
