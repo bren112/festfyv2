@@ -2,6 +2,7 @@ import Navbar from '../../componets/telaApresentacao/Navbar/Navbar';
 import './Apresentacao.css';
 import image from '../../images/personagem_semFundo.png';
 import InfosCard from '../../componets/telaApresentacao/Cards/Apresentacao/cardInfosFestfy/InfosCard';
+import Piramide from '../../componets/telaApresentacao/Cards/Apresentacao/Piramide/Piramide';
 function Apresentacao() {
   return (
     <div className="apresentacao-page">
@@ -31,10 +32,11 @@ function Apresentacao() {
       <div className="container_apresentacao_right">
         <img src={image} alt="Apresentacao" />
       </div>
-
       </div>
 
-    <InfosCard />
+      <InfosCard />
+      <Piramide />
+
     </div>
   )
 }

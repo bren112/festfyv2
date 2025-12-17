@@ -1,0 +1,190 @@
+/* --- CONTAINER PRINCIPAL --- */
+.piramide_page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff; /* Ajuste conforme o fundo do seu site */
+    overflow: hidden;
+  }
+  
+  .piramide_container {
+    width: 100%;
+    max-width: 1120px;
+    padding: 80px 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  /* --- LADO ESQUERDO (TEXTOS) --- */
+  .piramide_content_left {
+    flex: 1.2;
+  }
+  
+  .piramide_hero {
+    width: 100%;
+    max-width: 640px;
+  }
+  
+  .piramide_text_main {
+    font-size: clamp(34px, 6vw, 64px);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #111111;
+  }
+  
+  /* Estado Inicial dos Spans */
+  .piramide_text_main span {
+    display: block;
+    opacity: 0;
+    transform: translateY(-40px);
+    will-change: transform, opacity;
+  }
+  
+  /* DEGRADÊ MONUMENTAL (OURO EGÍPCIO) */
+  .piramide_text_main span.piramide_highlight {
+    background: linear-gradient(180deg, #111111 0%, #4b5563 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  /* Subtítulo */
+  .piramide_subtitle {
+    margin-top: 24px;
+    max-width: 580px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #4b5563;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(-30px);
+    will-change: transform, opacity;
+  }
+  
+  /* Botão */
+  .button_padrao_piramide {
+    margin-top: 32px;
+    padding: 16px 40px;
+    background: #111111;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    opacity: 0; /* Começa invisível */
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .button_padrao_piramide:hover {
+    transform: scale(1.05);
+    background: #222222;
+  }
+  
+  /* --- LADO DIREITO (IMAGEM DA PIRÂMIDE) --- */
+  .piramide_content_right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .piramide_img_monumento {
+    max-width: 480px;
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    filter: drop-shadow(0 0 0 rgba(182, 141, 42, 0));
+    will-change: transform, opacity, filter;
+  }
+  
+  /* --- GATILHOS DE ANIMAÇÃO (QUANDO IS-VISIBLE ESTÁ PRESENTE) --- */
+  
+  .is-visible .piramide_text_main span {
+    animation: dropInPiramide 0.8s ease-out forwards;
+  }
+  
+  .is-visible .piramide_text_main span:nth-child(1) { animation-delay: 0.1s; }
+  .is-visible .piramide_text_main span:nth-child(2) { animation-delay: 0.25s; }
+  .is-visible .piramide_text_main span:nth-child(3) { animation-delay: 0.4s; }
+  .is-visible .piramide_text_main span:nth-child(4) { animation-delay: 0.55s; }
+  
+  .is-visible .piramide_subtitle {
+    animation: dropInPiramide 0.8s ease-out forwards;
+    animation-delay: 0.8s;
+  }
+  
+  .is-visible .button_padrao_piramide {
+    animation: fadeInSimple 0.8s ease-out forwards;
+    animation-delay: 1s;
+  }
+  
+  .is-visible .piramide_img_monumento {
+    animation: piramideGlow 2s ease-out 0.5s forwards;
+  }
+  
+  /* --- KEYFRAMES --- */
+  
+  @keyframes dropInPiramide {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInSimple {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes piramideGlow {
+    0% {
+      opacity: 0;
+      transform: translateY(40px) scale(0.9);
+      filter: drop-shadow(0 0 0 rgba(182, 141, 42, 0));
+    }
+    60% {
+      filter: drop-shadow(0 20px 40px rgba(182, 141, 42, 0.4));
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: drop-shadow(0 15px 30px rgba(182, 141, 42, 0.25));
+    }
+  }
+  
+  /* --- RESPONSIVIDADE (MOBILE) --- */
+  @media (max-width: 850px) {
+    .piramide_container {
+      flex-direction: column;
+      text-align: center;
+      padding: 60px 20px;
+    }
+  
+    .piramide_content_left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .piramide_subtitle {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .piramide_content_right {
+      display: none; /* Oculta a pirâmide no mobile para focar no texto */
+    }
+  
+    .piramide_text_main {
+      font-size: 42px;
+    }
+  }
